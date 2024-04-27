@@ -42,6 +42,6 @@ So i just gona to use version 1.6
 
 And I will definetly upgrade my code in the future.
 
-* matt part function
+* mqtt part function
 
 get the content( payload ) and the server information(settings)  then send it.
