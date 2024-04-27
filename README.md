@@ -46,6 +46,9 @@ And I will definetly upgrade my code in the future.
 
 get the content( payload ) and the server information(settings)  then send it.
 
+## release
+
+`pyinstaller gui_ver_1.py -p mqttSender.py`
 
 # Version 2.0
 
