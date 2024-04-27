@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-# -*- coding: utf-8 -*-
 import paho.mqtt.client as mqtt
 import random
- 
+user_id=""
+user_pwd=""
+mqtt_server=""
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code: " + str(rc))
  
@@ -38,13 +40,13 @@ def on_disconnect( client, userdata, rc):
  
 client_id = "desktop client nh55"	# 生成一个设备号
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1,client_id)
-client.username_pw_set("regen", "regen")
+client.username_pw_set(user_id, user_pwd)
 client.on_connect = on_connect
 client.on_message = on_message
 client.on_publish = on_publish
 client.on_disconnect = on_disconnect
 client.on_unsubscribe = on_unsubscribe
 client.on_subscribe = on_subscribe
-client.connect('142.171.33.151', 1883, 600) # 600为keepalive的时间间隔
+client.connect(mqtt_server, 1883, 600) # 600为keepalive的时间间隔
 client.subscribe('/mqttSender_test', qos=0)
 client.loop_forever() # 保持连接
