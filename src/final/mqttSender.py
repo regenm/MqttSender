@@ -5,7 +5,7 @@ import random
 import paho.mqtt.client as mqtt
 
 class MqttSender:
-    client = mqtt.Client()
+    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
 
     def __init__(
             self,
@@ -15,7 +15,7 @@ class MqttSender:
             mqtt_server:str,
         ) -> None:
         self.client.__init__(mqtt.CallbackAPIVersion.VERSION1,client_id)
-        self.fclient.username_pw_set(user_id, user_pwd)
+        self.client.username_pw_set(user_id, user_pwd)
         self.client.connect(mqtt_server, 1883, 600) # 600为keepalive的时间间隔
         self.client.on_connect = on_connect
         self.client.on_message = on_message
@@ -23,14 +23,12 @@ class MqttSender:
         self.client.on_disconnect = on_disconnect
         self.client.on_unsubscribe = on_unsubscribe
         self.client.on_subscribe = on_subscribe
-    def sendMessage(self,message):
-        self.client.publish(topic='/mqttSender_test', payload=message, qos=0, retain=False)
-        
+    def sendMessage(self,topic_,message):
+        self.client.publish(topic=topic_, payload=message, qos=0, retain=False)
 
 
 
-
-
+# 
 
 def on_connect(client, userdata, flags, rc):
         print("链接")
