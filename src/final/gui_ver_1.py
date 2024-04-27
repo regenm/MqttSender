@@ -7,26 +7,35 @@
 # -*- coding: UTF-8 -*-
 import mqttSender
 import tkinter
-import tkinter.messagebox
 import tkinter.scrolledtext
 
+user_id=""                      # your mqtt account name         
+user_pwd=""                     # your mqtt account password                                      
+mqtt_server=""                  # your mqtt IP address or domain         
+mqtt_clientID=""                # your unique client id         
+mqtt_topic=""                   # the topic you want to send message
+
+
 def send():
-    print("send message successfully")
-def rootSettings(root):
-    root.title('mqttSender')#标题
-    root.geometry('600x400')#窗体大小
-    root.resizable(False, False)#固定窗体
+    var=content_tobe_sent.get()
+    mqtt.sendMessage(mqtt_topic,var)
+    var="message : "+var+"\n"
+    output_text.insert("end",var)
 
-
-
+mqtt=mqttSender.MqttSender(user_id=user_id,user_pwd=user_pwd,client_id=mqtt_clientID,mqtt_server=mqtt_server)
+# GUI
 root=tkinter.Tk()
-rootSettings(root)
-content_tobe_sent=tkinter.Entry(root).pack(side='left') # input
-button_send=tkinter.Button(root, text='send',command=send).pack(side='right') # send button
-output_text=tkinter.scrolledtext.ScrolledText(root, width=40, height=10).pack() # output
+root.title('mqttSender Version 1.0')   #标题
+content_tobe_sent=tkinter.Entry(root) # input
+button_send=tkinter.Button(root, text='send',command=send) # send button
+output_text=tkinter.scrolledtext.ScrolledText(root, width=40, height=10) # output
+content_tobe_sent.pack()
+button_send.pack()
+output_text.pack()
+root.mainloop()
 
-mqtt=mqttSender.MqttSender("regen","regen","NH55","142.171.33.151")
-mqtt.sendMessage("/mqttSender_test","gui_ver_1 test")
+# mqtt.sendMessage("/mqttSender_test","gui_ver_1 test")
+
 
 
 

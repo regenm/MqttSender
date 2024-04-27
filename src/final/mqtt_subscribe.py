@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-# -*- coding: utf-8 -*-
 import paho.mqtt.client as mqtt
 import random
+
+
+# This is a example code
+# showing how to use paho-mqtt 
+# to subscribe a topic on a mqtt server
+# source code from gihub paho-mqtt
+# 
+
 user_id=""
 user_pwd=""
 mqtt_server=""

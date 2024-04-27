@@ -25,6 +25,7 @@ class MqttSender:
         self.client.on_subscribe = on_subscribe
     def sendMessage(self,topic_,message):
         self.client.publish(topic=topic_, payload=message, qos=0, retain=False)
+        print(message)
 
 
 
