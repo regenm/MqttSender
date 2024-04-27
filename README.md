@@ -36,7 +36,7 @@ Another purpose is to learn python tkinter(GUI lib)
 
 * description
 
-When coding the parts of mqtt sucscribe and publish , I find that the mqtt lib had upugrade to version 2.0 . However , I get the version 1 example code . Making me annoyed. 
+When coding the parts of mqtt sucscribe and publish , I find that the mqtt lib had upugrade to version 2.0 . However , I get the version 1 example code . Making me annoyed.
 
 So i just gona to use version 1.6
 
@@ -45,3 +45,8 @@ And I will definetly upgrade my code in the future.
 * mqtt part function
 
 get the content( payload ) and the server information(settings)  then send it.
+
+
+# Version 2.0
+
+## requirements analization v1.0
