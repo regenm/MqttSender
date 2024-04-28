@@ -53,3 +53,7 @@ get the content( payload ) and the server information(settings)  then send it.
 # Version 2.0
 
 ## requirements analization v1.0
+
+### GUI
+
+)![img](image/README/GUI_2_0.png "GUI_2_0")
