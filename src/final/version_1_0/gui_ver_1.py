@@ -9,11 +9,11 @@ import mqttSender
 import tkinter
 import tkinter.scrolledtext
 
-user_id=""                      # your mqtt account name         
-user_pwd=""                     # your mqtt account password                                      
-mqtt_server=""                  # your mqtt IP address or domain         
-mqtt_clientID=""                # your unique client id         
-mqtt_topic=""                   # the topic you want to send message
+user_id="regen"                      # your mqtt account name         
+user_pwd="regen"                     # your mqtt account password                                      
+mqtt_server="142.171.33.151"                  # your mqtt IP address or domain         
+mqtt_clientID="nh55"                # your unique client id         
+mqtt_topic="/MqttSendertest"                   # the topic you want to send message
 
 
 def send():

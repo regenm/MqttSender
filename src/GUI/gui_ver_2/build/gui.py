@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Regen\Desktop\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"H:\git_project\MqttSender\MqttSender\src\GUI\gui_ver_2\build\assets\frame0")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -209,9 +209,38 @@ canvas.create_text(
     font=("Inter", 24 * -1)
 )
 
+entry_image_7 = PhotoImage(
+    file=relative_to_assets("entry_7.png"))
+entry_bg_7 = canvas.create_image(
+    616.0,
+    181.0,
+    image=entry_image_7
+)
+entry_7 = Entry(
+    bd=0,
+    bg="#FAFAFA",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_7.place(
+    x=492.0,
+    y=162.0,
+    width=248.0,
+    height=36.0
+)
+
 canvas.create_text(
-    402.0,
-    173.0,
+    344.0,
+    161.0,
+    anchor="nw",
+    text="Server:",
+    fill="#C2B21F",
+    font=("Inter", 24 * -1)
+)
+
+canvas.create_text(
+    540.0,
+    5.0,
     anchor="nw",
     text="Regen mqttSender v2.0",
     fill="#FFFFFF",
