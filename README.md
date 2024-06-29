@@ -54,4 +54,32 @@ get the content( payload ) and the server information(settings)  then send it.
 
 ## requirements analization v1.0
 
+* 6 inut text
+* 1 ouput text
+
+
+### Technique
+
+1. python tkinter
+2. python pyinstaller
+3. python mqtt
+4. tkinter-designer
+
+
 ### GUI
+
+)![version_2](image/Screenshot_3.png)
+
+#### How to use ?
+
+* )use source code
+
+  1. change `src\final\version_2_0\gui_ver_2.py ` Line 70 to your own file position
+     ![img](image/Screenshot_4.png)
+  2. RUN
+
+  ```
+  cd src\final\version_2_0
+  python gui_ver_2.py
+  ```
+* use release ( to be finished )
